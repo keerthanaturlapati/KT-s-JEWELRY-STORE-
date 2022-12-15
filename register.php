@@ -17,13 +17,6 @@
     $already_login = "SELECT * FROM user WHERE user_email='$email'";
     $result_loggedin = mysqli_query($connection,$sql);
     $no_of_rows=mysqli_num_rows($result);
-    if($no_of_rows==1){ 
-
-        echo "User Already Exists";
-
-    }
-
-    else{
 
         if($password1!=$password2){
             $showalert=true;
@@ -36,7 +29,6 @@
             }
         }
 
-    }
 
      }
 
