@@ -14,6 +14,17 @@
         $password1=$_POST["Password1"];
         $password2=$_POST["Password2"];
 
+        $logged_in="SELECT * FROM user WHERE user_email='$email'";
+        $logged_in_result=mysqli_query($connection,$sql);
+        $num_rows=mysqli_num_rows($logged_in_result);
+
+        if($no_of_rows==1){
+            $logged_in_alert=true;
+            header("location:register.php");
+        }
+
+
+
         if($password1!=$password2){
             $showalert=true;
         }
@@ -55,6 +66,16 @@
             
         }    
     ?>
+
+    <?php 
+        if($logged_in_alert){
+            echo '<div class="onetimealert">
+            <h4>Passwords do not match</h4>
+        </div>';
+            
+        }    
+    ?>
+
 
     <div class="container">
         <div class="form-container">
