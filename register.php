@@ -81,8 +81,8 @@
 
         }
     ?>
- 
 
+    <h4>REGISTER</h4>
 
     <div class="container">
         <div class="form-container">
