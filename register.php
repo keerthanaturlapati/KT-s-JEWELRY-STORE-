@@ -9,37 +9,38 @@
     }
      include "./utils/_database.php";
      $showalert=false;
-     $logged_in_alert=false;
+     $user_exists=false;
      if($_SERVER["REQUEST_METHOD"]=="POST"){
         $email=$_POST["Email"];
         $password1=$_POST["Password1"];
         $password2=$_POST["Password2"];
 
-        $logged_in="SELECT * FROM user WHERE user_email='$email'";
-        $logged_in_result=mysqli_query($connection,$logged_in);
-        $db_user=mysqli_fetch_assoc($logged_in_result);
+        $user_exists="SELECT * FROM user WHERE user_email='$email'";
+        $user_exists_result=mysqli_query($connection,$user_exists);
+        $db_user=mysqli_fetch_assoc($user_exists_result);
         $user_email = $db_user["user_email"];
         echo $user_email;
-        $num_rows=mysqli_num_rows($logged_in_result);
+        $num_rows=mysqli_num_rows($user_exists_result);
 
         if($num_rows==1){
             $logged_in_alert=true;
             header("location:register.php");
         }
         
-
-
-        if($password1!=$password2){
-            $showalert=true;
-        }
         else{
-            $sql="INSERT INTO `user` ( `user_email`, `user_password`) VALUES ('$email', '$password1')";
-            $result=mysqli_query($connection,$sql);
-            if($result){
-                header("location:login.php");
-            }
-        }
 
+            if($password1!=$password2){
+                $showalert=true;
+            }
+            else{
+                $sql="INSERT INTO `user` ( `user_email`, `user_password`) VALUES ('$email', '$password1')";
+                $result=mysqli_query($connection,$sql);
+                if($result){
+                    header("location:login.php");
+                }
+            }
+
+        }
 
      }
 
@@ -74,7 +75,7 @@
     <?php 
         if($logged_in_alert){
             echo '<div class="onetimealert">
-            <h4>Passwords do not match</h4>
+            <h4>User Already Exists</h4>
         </div>';
             
         }    
