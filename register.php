@@ -23,7 +23,7 @@
         $num_rows=mysqli_num_rows($user_exists_result);
 
         if($num_rows==1){
-            $logged_in_alert=true;
+            $user_exists=true;
             header("location:register.php");
         }
         
@@ -73,7 +73,7 @@
     ?>
 
     <?php 
-        if($logged_in_alert){
+        if($user_exists){
             echo '<div class="onetimealert">
             <h4>User Already Exists</h4>
         </div>';
