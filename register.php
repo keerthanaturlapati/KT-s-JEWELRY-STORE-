@@ -24,7 +24,7 @@
 
         if($num_rows==1){
             $user_exists=true;
-            header("location:register.php");
+            
         }
         
         else{
