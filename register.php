@@ -16,13 +16,16 @@
 
         $logged_in="SELECT * FROM user WHERE user_email='$email'";
         $logged_in_result=mysqli_query($connection,$sql);
+        $db_user=mysqli_fetch_assoc($result);
+        $user_email = $db_user["user_email"];
+        echo $user_email;
         $num_rows=mysqli_num_rows($logged_in_result);
 
         if($no_of_rows==1){
             $logged_in_alert=true;
             header("location:register.php");
         }
-
+        
 
 
         if($password1!=$password2){
