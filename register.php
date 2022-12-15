@@ -78,8 +78,10 @@
                 echo '<div class="onetimealert">
                 <h4>User Already Exists</h4>
             </div>';
+
+        }
     ?>
-} 
+ 
 
 
     <div class="container">
