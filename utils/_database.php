@@ -1,7 +1,7 @@
 <?php
     $server="localhost";
     $username="root";
-    $password="mysql";
+    $password="KTaws";
     $db_name="jewelry_store";
     
 
