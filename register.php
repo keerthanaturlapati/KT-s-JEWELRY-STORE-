@@ -9,19 +9,20 @@
     }
      include "./utils/_database.php";
      $showalert=false;
+     $logged_in_alert=false;
      if($_SERVER["REQUEST_METHOD"]=="POST"){
         $email=$_POST["Email"];
         $password1=$_POST["Password1"];
         $password2=$_POST["Password2"];
 
         $logged_in="SELECT * FROM user WHERE user_email='$email'";
-        $logged_in_result=mysqli_query($connection,$sql);
-        $db_user=mysqli_fetch_assoc($result);
+        $logged_in_result=mysqli_query($connection,$logged_in);
+        $db_user=mysqli_fetch_assoc($logged_in_result);
         $user_email = $db_user["user_email"];
         echo $user_email;
         $num_rows=mysqli_num_rows($logged_in_result);
 
-        if($no_of_rows==1){
+        if($num_rows==1){
             $logged_in_alert=true;
             header("location:register.php");
         }
