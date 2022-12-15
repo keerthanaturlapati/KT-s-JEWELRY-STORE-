@@ -19,7 +19,7 @@
     $no_of_rows=mysqli_num_rows($result);
     if($no_of_rows==1){ 
 
-        $already_loggedin=true;
+        echo "User Already Exists";
 
     }
 
@@ -63,15 +63,6 @@
         if($showalert){
             echo '<div class="onetimealert">
             <h4>Passwords do not match</h4>
-        </div>';
-            
-        }    
-    ?>
-
-    <?php 
-        if($already_loggedin){
-            echo '<div class="onetimealert">
-            <h4>User Already Exists</h4>
         </div>';
             
         }    
