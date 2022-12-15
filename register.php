@@ -83,9 +83,9 @@
     ?>
 
     
-
+    <h4 >REGISTER</h4>
     <div class="container">
-        <h4>REGISTER</h4>
+       
         <div class="form-container">
             <form action="./register.php" method="post" class="form-element">
                 <div class="input-element">
