@@ -21,7 +21,7 @@
 
         $current_user_id=$_SESSION["user_id"];
 
-        echo "add to cart is set";
+        
         $product_image=$_POST["product_image"];
         $product_title=$_POST["product_title"];
         $product_price=$_POST["product_price"];
@@ -34,7 +34,7 @@
         else{
             $insert_cart_item="INSERT INTO cart (user_id, product_title, product_image, product_price) VALUES ('$current_user_id','$product_title','$product_image','$product_price')";
             $result=mysqli_query($connection,$insert_cart_item);
-            echo "Product added to cart";
+            
         }
     }
 

@@ -13,6 +13,16 @@
         $email=$_POST["Email"];
         $password1=$_POST["Password1"];
         $password2=$_POST["Password2"];
+    
+    $already_login = "SELECT * FROM user WHERE user_email='$email'";
+    $result_loggedin = mysqli_query($connection,$sql);
+    $no_of_rows=mysqli_num_rows($result);
+    if($no_of_rows==1){ 
+
+        $already_loggedin=true;
+
+    }
+
     if($password1!=$password2){
         $showalert=true;
     }
@@ -24,6 +34,9 @@
         }
     }
      }
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -50,6 +63,14 @@
         }    
     ?>
 
+    <?php 
+        if($already_loggedin){
+            echo '<div class="onetimealert">
+            <h4>User Already Exists</h4>
+        </div>';
+            
+        }    
+    ?>
 
     <div class="container">
         <div class="form-container">
