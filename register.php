@@ -23,16 +23,21 @@
 
     }
 
-    if($password1!=$password2){
-        $showalert=true;
-    }
     else{
-        $sql="INSERT INTO `user` ( `user_email`, `user_password`) VALUES ('$email', '$password1')";
-        $result=mysqli_query($connection,$sql);
-        if($result){
-            header("location:login.php");
+
+        if($password1!=$password2){
+            $showalert=true;
         }
+        else{
+            $sql="INSERT INTO `user` ( `user_email`, `user_password`) VALUES ('$email', '$password1')";
+            $result=mysqli_query($connection,$sql);
+            if($result){
+                header("location:login.php");
+            }
+        }
+
     }
+
      }
 
 
