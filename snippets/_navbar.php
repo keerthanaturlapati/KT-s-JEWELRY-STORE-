@@ -18,7 +18,7 @@
         <?php
             if($display_btn){
                 echo('<a href="./register.php" class="nav__links">Register</a>
-                <a href="./login.php" class="nav__links">Login</a> <a href="./contact.php" class="nav__links">Contact US</a>');
+                <a href="./login.php" class="nav__links">Login</a>');
             }
             else{
             echo('<a href="./logout.php" class="nav__links logout-btn">Logout</a>');

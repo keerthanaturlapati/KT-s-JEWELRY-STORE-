@@ -8,25 +8,26 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;1,100;1,300;1,400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/styles.css">
-    <link rel="stylesheet" href="./css/cart.css">
+    <link rel="stylesheet" href="./css/auth.css">
 
-    <title>KT's JEWELRY STORE</title>
+    <title>Contact US</title>
 </head>
 <body>
-    <?php require "./snippets/_navbar.php"; ?> 
+
     <div class="container">
-        <div class="cart-container">
-            <p>About US : We are an online Jewelry store and only accpet online orders</p><br>
-            <p>We sell Rings, Necklaces, Earrings and Bracelets</p><br>
-            <p> Contact US: </p>
-            <p> Phone Number : 99999999 </p>
-            <p> Email Address : abc@gmail.com </p>
+        
+        <div class="form-container">
+            <div><h2>ABOUT US</h2></div>
+            <div><p>We are online jewelry business. We sell earrings, necklaces, bracelets and finger rings</p></div>
+            <div><h2>Contact US</h2></div>
+            <div><h4>Phone Number : 999999999</h4></div>
+            <div><h4>Email Adress : abc@gmail.com</h4></div>
         </div>
 
     </div>
     <footer>
 
     </footer>
-<script src="https://kit.fontawesome.com/cc211e9abe.js" crossorigin="anonymous"></script>   
+<script src="https://kit.fontawesome.com/cc211e9abe.js" crossorigin="anonymous"></script>  
 </body>
 </html>
