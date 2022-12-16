@@ -14,6 +14,8 @@
 </head>
 <body>
 
+    <?php require "./snippets/_navbar.php"; ?> 
+
     <div class="container">
         
         <div class="form-container">
