@@ -1,7 +1,7 @@
 <?php
     $server="localhost";
     $username="root";
-    $password="KTaws";
+    $password="cloudcomputing";
     $db_name="jewelry_store";
     
 
